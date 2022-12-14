@@ -1,0 +1,80 @@
+.dspcL {
+  width: 300px;
+  margin-left: 30px;
+}
+
+.dspcR {
+  flex: 1;
+  /* margin-right: 10px; */
+  margin-left: 30px;
+}
+
+.tal {
+  height: 270px;
+  width: 100%;
+  display: flex;
+  padding-bottom: 200px;
+}
+
+#para {
+  width: 300px;
+  word-wrap: normal;
+}
+.container {
+  position: absolute;
+}
+
+#catep{
+  width: 450px;
+  height: 220px
+}
+
+.txtF {
+  position: absolute;
+}
+
+#foirB {
+  top: 29px;
+  left: 50px;
+  font-weight: 700;
+}
+
+#emiB {
+  top: 29px;
+  left: 185px;
+  font-weight: 700;
+}
+
+#elaB {
+  top: 29px;
+  left: 332px;
+  font-weight: 700;
+}
+
+#exM {
+  color: red;
+  bottom: 75px;
+  left: 160px;
+}
+
+#elaD {
+  bottom: 75px;
+  left: 300px;
+}
+
+#fr {
+  bottom: 28px;
+  left: 205px;
+  font-size: 17px;
+}
+
+#frD {
+  bottom: -30px;
+  left: 100px;
+  font-size: 12px;
+  width: 55%;
+}
+
+p{
+  text-align: left;
+}

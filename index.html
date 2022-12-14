@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" href="./css/home.css">
+<link rel="stylesheet" href="./css/0-dummy.css">
+<link rel="stylesheet" href="./css/smt.css">
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+
+
+</head>
+
+<a  href="javascript:void(0)" class="btn-download" id="hide" onclick="hideButton()">Download PDF  </a>
+
+<body id="invoice">
+
+  <div class="header">
+    <div>   
+    <img src="data:image/jpeg;base64,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" alt="logo" />
+    <h1 align="right">CREDIT ANALYSIS REPORT</h1>
+    <h2 align="right" id="name" style="border: none; font-size: large; color: grey; "></h2>
+    </div>
+</div>
+<div style="background-color: #efefef;">
+  <input type="file" accept=".xlsx,.xls" id="excel_file" />
+  <br>
+  <h4 style="background-color: grey; text-align: center; font-size: 30px;">Current Liablities</h4>
+    
+      <table id="excel_data_1" align="center" style="margin-bottom: 2%;"></table>
+
+
+        <h4 style="background-color: grey; text-align: center; font-size: 30px;">Disposable Income</h4>
+    
+    <div class="tal">
+      <div class="dspcL">
+        <div id="disposible_table">
+          <div>
+            <p style="font-weight: bold;">Credit Score : <span style="font-weight: normal;" id="credit_score_element"></span></p>
+          </div>
+          <div>
+            <p style="font-weight: bold;">Salary: <span style="font-weight: normal;" id="salary_element"></span></p>
+          </div>
+          <div>
+            <p style="font-weight: bold;">FOIR Amount: <span style="font-weight: normal;" id="foir_amount_element"></span></p>
+          </div>
+          <div>
+            <p style="font-weight: bold;">Existing EMI: <span style="font-weight: normal;" id="existing_emi_element"></span></p>
+          </div>
+          <div>
+            <p style="font-weight: bold;" id="myP">Eligible Amount: <span id="eligible_amount_element"></span></p>
+          </div>
+          <div>
+            <p id="para"></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dspcR">
+        <!-- <div class="hmm"> -->
+          <div class="container">
+            <img src="data:image/jpeg;base64,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f/hD3v8A8uKP+Ee+NP8A0P8A4D/8Ie9/+XFAHqFeX/CH/koPxv8A+xwt/wD0waPR/wAI98af+h/8B/8AhD3v/wAuK1fhX4B1jwVJ4tvvEGt2Ou6z4k1ddWuJtN017C3iK2VraLGkTzzt9y0ViTIcljwBgUAd3RRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAHl/iH/k53wB/2J/iP/0t0OvUK8x8QRuf2mfAThWKL4Q8RKWxwCb3RMDP4H8jXp1ABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//2Q==" alt="that diagram" id="catep"/>
+
+            <p class="txtF" id="foirB"></p>
+            <p class="txtF" id="emiB"></p>
+            <p class="txtF" id="elaB"></p>
+
+            <p class="txtF" id="exM">Existing EMI</p>
+            <p class="txtF " id="elaD" >Eligible Amount</p>
+
+            <p class="txtF" id="fr">FOIR</p>
+            <div>
+              <p class="txtF" id="frD">
+                The Fixed Obgliations to Income Ratio (FOIR) is a metric used by
+                Banks and Other Financial Institutions to assess an Individual's
+                Loan Eligibility
+              </p>
+            </div>
+          </div>
+        <!-- </div> -->
+        <!-- <object data="../xlt/cater.html" width="400 "></object> -->
+      </div>
+    </div>
+    
+        <h4 style="background-color: grey; text-align: center; font-size: 30px;">Our Recommendation</h4>
+    
+    <h4 style="background-color: rgb(255, 255, 255); text-align: center; font-size: 18px; color:#000000; font-weight: normal;"><br>We saw your interest in personal loan. According to your CREDIT analysis, we recommend<br><br>  
+    </h4>
+    
+      <div id="case1">
+        <table id="disposabel_table2" >
+          
+        </table>
+      </div>
+      <div id="case2">
+          <table id="disposabel_table3" >
+          </table>
+          <table id="disposabel_table4" >
+          </table>
+          <br>
+        </div>
+       
+      <div id="case3">
+        <ul class="a" >
+          <li>
+            Your Credit report shows that you have delinquencies in Products due to 
+            which you are not eligible for a Loan.
+          </li> 
+     
+       
+          <li>
+             We suggest you to Clear your Delinquencies in Products, so your chances of 
+            Loan approval gets Improved as well as it will also help you to maintain Good 
+            Credit Score
+          </li>
+          
+        </ul>
+        <ul class="a" style="font-weight: bold; text-align: left; margin-left: 5%;">
+          *A account is said to be Delinquent when they are past due on their financial 
+        obligation(s), such as a loan, credit card or payments.
+        </ul>
+      </div>
+
+    
+      <h4 style="background-color: rgb(255, 255, 255); text-align: left; font-size: 15px; color:#6e6e6e; margin-left: 5%; margin-right: 5%; font-weight: normal;" >
+        <br>
+        <div id="recommendation_text" style="color: #000000; font-size: medium; text-align: left; margin-left: 15px;"></div>
+        <br>&nbsp;&nbsp;&nbsp;Do you have existing Home Loan? Test Your Loan: <a href="https://testmyloan.ai/">https://testmyloan.ai/</a><br>
+        &nbsp;&nbsp;&nbsp;Have a Health Insurance? Test Your Policy: <a href="https://testmypolicy.com/">https://testmypolicy.com/</a><br><br>
+      </h4>
+    <div class="html2pdf__page-break"></div>
+    <div class="pagebreak"></div>
+      <h4 style="background-color: grey; text-align: center; font-size: 30px; margin-top: 20px;">Detailed Report</h4>
+      
+        <table id="excel_data_0" align="center"></table>
+      
+  
+    <div id="hmm">
+      <br><br>
+        <div style="font-weight: bold; text-align: left;" >Disclaimer:</div>
+        The present report including any amendments/ modification/ update thereon which is being prepared/ operated and managed by E-Revbay Private Limited (hereinafter
+        collectively referred to as “Company”/ “ERB”/ “We”) incorporated under the Companies Act, 2013.
+        The information contained herein is for general information purposes only. The information is provided by ERB and while we (ERB) endeavor to keep the information up to
+        date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with
+        respect to this report or the information, products, services, or related graphics contained on this report for any purpose. Any reliance you place on such information is
+        therefore strictly at the User’s own risk.The information & recommendation/s are based on the Credit check and the data as may be available/ updated with the Credit
+        bureau. This report is an information report and we only display the information based on your inputs followed by the information/ data received from our credit bureau
+        association/s. We DO NOT check your Credit history without your absolute Authorization and OTP authentication at all times whatsoever. However, getting a Loan/ sum/
+        Money is based on the sole & exclusive discretion of the Bank/ NBFC/ FI and further subject to detailed credit check & compliance with Bank/ NBFC/ FI’s policy/ rules/
+        guidelines. We DO NOT in any manner grant guarantee that the Loan/ Sum/ Money will be disbursed to any user whatsoever. In no event will we be liable for any loss or
+        damage including without limitation, indirect or consequential. The decision with respect to any financial product/service or opportunity or nature or suitability or choice or
+        the viability of any product or service shall always be sole responsibility and decision of User. <br><br>
+    </div>
+  </div>
+  </div>
+  <div>
+    <footer align="center" >
+        <p id="footer2">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAVCAMAAAERLp7FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC3UExURQAAAHVwcHZwcHRvb3ZxcXRxcXZwcHVxcXR0dHVwcHVwcHZxcXlycnZwcH9/f3VwcHZxcXZwcHVwcHVxcXZxcXVwcHdxcXVxcXVxcXZxcX9qanNubnVwcHVxcXJycnZxcXVwcHVwcHVwcHZwcHVycndwcHRycnZwcHZxcXhxcXdvb3dycnZxcXZtbXVxcXZxcX9/f3VwcHVvb3ZwcHVwcHZxcXdvb3ZwcHVxcXVxcXVwcHZxcW9vb8/w3w4AAAA9dFJOUwCPgzCXSOerGPunryizCMdYVGiHz9dc43xwDCyT8xTvNPej60x4YJ//JCA87By/uwTDULdky0Dt34vbbBCzr8VzAAAACXBIWXMAABcRAAAXEQHKJvM/AAABIUlEQVQoU22RAVeCQBCEtywJzcS0LAtByZowyNLKkv//u5q9W5Ln63sctzN7t7cccg1A+IhwxIzQZhzSUwdvFFKoWg7iiTMdrza7dYTv86GsrkysRD53Gmb7danLGbpvjcqLE+RWZxtLhFMGTieZepLiUjVYtOYY0rbCno3fX9PS9bkJ4UnUBTpeTVD6+qNQSy7QsvNkyTrJWNd4XUmCR1majqCRyDh2ejxzimzwQP1tiqx4f13rzCMH/R6gFx/eND6wwe1Mu8cgQxKZ9cc7Tf5Bpil2M2x9h470B+GCJes02xqG+HjWKC+B+wtn7tOkmgNdjmBqxj5dlJjr1An0Xo/Qd4V8uuoA6zPVNdMA6E19Ghjdmd0g72tGnl50+p+v3i8x0DHPABSeVQAAAABJRU5ErkJggg==" style="margin-left: 2px; margin-right: 10px;"/><a href="mailto:xsell@finqy.ai">xsell@finqy.ai</a>  
+
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAdCAMAAAHuqlxcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACoUExURQAAAHVxcXVwcHZwcHRvb3RxcXZwcHVxcXR0dHVwcHVwcHZxcXZxcXlycnZwcH9/f3VwcHZwcHVwcHVxcXZxcXVwcHdxcXVxcXZxcX9qanNubnVwcHVxcXZwcHJycnZxcXVwcHVwcHVwcHZwcHRycnZxcXhxcXdycndvb3ZtbXVxcXZxcX9/f3VwcHVvb3ZwcHVwcHZxcXdvb3VxcXZxcXVwcHZxcW9vb9mHOJsAAAA4dFJOUwCAj4MwSOerGPunOK8oswjHVGiHz9dc43AMLJPzdBTvNPej62D/JDwgHL+7BMNQt2TLQN/T22wQ5QcmYQAAAAlwSFlzAAAXEQAAFxEByibzPwAAAW9JREFUKFNFUgtbwjAMvCmbU0FAqTCcotYTwU55Cf//n3nJ5udtS5NLm1cH9IGrAsBQ308CgtYdgfEPUEmXfRpiL/1drN4LkcDKRMV7YC2FmJ2b74OIZmX4Mj++zS0e2LrdcJPmDUulE5sxDpEX4ND3bJd28gEDZtvaU4Wjn7INQH4p8ezBhBAsiuM+sG+VAiWbedrQcqXO3UyAYowUmXkcnWeO4g6bvvTeQVuM0lMqp6qqohH1JOMzzs8wUYfjTPlFpi75ZirRv3G9pbiTqNueLXOwoRhUkQ23RdkOwZGOC3ZYzDR2xylwmnc6dnsG7+GW0aeNVbuUUz4CXxxJT59kjOTaJtToOibsqY0Fl7azd/miwQyoEVM5lmyM1Z14vSS+aTWveSFvevWIO8keCytpubfyph5qz2s1zsNfqS1GnNmSs35y2/EU7bcwrBat3/DG+qNTgTvGga2rgg9OdKhGbE5Vw0N7n/8oAxm688Av/QIlbO3+6LUAAAAASUVORK5CYII=" style="margin-left: 10px; margin-right: 10px;"  />+91 77108 84701
+            
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAdCAMAAAHuqlxcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACoUExURQAAAHVxcXVwcHZwcHRvb3RxcXZwcHVxcXR0dHVwcHVwcHZxcXZxcXlycnZwcH9/f3VwcHZwcHVwcHVxcXZxcXVwcHdxcXVxcXZxcX9qanNubnVwcHVxcXZwcHJycnZxcXVwcHVwcHVwcHZwcHRycnZxcXhxcXdycndvb3ZtbXVxcXZxcX9/f3VwcHVvb3ZwcHVwcHZxcXdvb3VxcXZxcXVwcHZxcW9vb9mHOJsAAAA4dFJOUwCAj4MwSOerGPunOK8oswjHVGiHz9dc43AMLJPzdBTvNPej62D/JDwgHL+7BMNQt2TLQN/T22wQ5QcmYQAAAAlwSFlzAAAXEQAAFxEByibzPwAAAW9JREFUKFNFUgtbwjAMvCmbU0FAqTCcotYTwU55Cf//n3nJ5udtS5NLm1cH9IGrAsBQ308CgtYdgfEPUEmXfRpiL/1drN4LkcDKRMV7YC2FmJ2b74OIZmX4Mj++zS0e2LrdcJPmDUulE5sxDpEX4ND3bJd28gEDZtvaU4Wjn7INQH4p8ezBhBAsiuM+sG+VAiWbedrQcqXO3UyAYowUmXkcnWeO4g6bvvTeQVuM0lMqp6qqohH1JOMzzs8wUYfjTPlFpi75ZirRv3G9pbiTqNueLXOwoRhUkQ23RdkOwZGOC3ZYzDR2xylwmnc6dnsG7+GW0aeNVbuUUz4CXxxJT59kjOTaJtToOibsqY0Fl7azd/miwQyoEVM5lmyM1Z14vSS+aTWveSFvevWIO8keCytpubfyph5qz2s1zsNfqS1GnNmSs35y2/EU7bcwrBat3/DG+qNTgTvGga2rgg9OdKhGbE5Vw0N7n/8oAxm688Av/QIlbO3+6LUAAAAASUVORK5CYII=" style="margin-left: 10px; margin-right: 10px;" />604, Vihaan Commercial Complex, Sonawala Lane, Goregaon (East), Mumbai – 400 063
+
+        </p>
+        
+      </footer>
+      </div>
+</body>
+
+<script src="./js/jspdf.debug.js"></script>
+<script src="./js/html2canvas.min.js"></script>
+<script src="./js/html2pdf.min.js"></script>
+<script src="./js/excelconvert.js"></script>
+  <!-- <script>
+    
+    const options = {
+      margin: 0,
+      filename: 'CAR.pdf',
+      image: { 
+        type: 'jpeg', 
+        quality: 1
+      },
+      html2canvas: { 
+        scale: 1
+      },
+      jsPDF: { 
+        unit: 'in', 
+        format: 'a3', 
+        orientation: 'portrait' 
+      }
+    }
+    
+    $('.btn-download').click(function(e){
+      e.preventDefault();
+      const element = document.getElementById('invoice');
+      html2pdf().from(element).set(options).save();
+    });
+
+
+    </script>
+
+<script>
+  function hideButton(){
+
+document.getElementById('hide').style.display= 'none';
+
+}
+</script> -->
+<script>
+  function hideButton(){
+  
+  document.getElementById('hide').style.display= 'none';
+  
+  }
+  </script>
+  
+</html>

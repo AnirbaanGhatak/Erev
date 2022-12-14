@@ -1,0 +1,261 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+input[type=file] {
+  margin-bottom: 10px;
+}
+
+#excel_data_0 {
+  border-collapse: collapse;
+  font-size: medium;
+  width: 80%;
+}
+
+#excel_data_0 tr:nth-child(1) {
+  background: #ff0000;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: large;
+}
+
+#excel_data_0 tr:nth-child(1) td:nth-child(1) {
+  background: #ff0000;
+  color: rgb(255, 255, 255);
+}
+
+#excel_data_0 td:nth-child(1) {
+  background: #343333;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size:medium;
+}
+
+#excel_data_0 td {
+  border: 5px solid #efefef;
+  padding: 10px;
+}
+
+
+#excel_data_0 tr {
+  border: 5px solid #efefef;
+  padding: 10px;
+  height: 40px;
+  background-color: white;
+}
+
+#excel_data_1 {
+  border-collapse: collapse;
+  width: 80%;
+  font-size: medium;
+}
+
+#excel_data_1 td:nth-child(1) {
+  background: #ff0000;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+#excel_data_1 tr:nth-child(1) td:nth-child(1) {
+  background: #343333;
+  color: rgb(255, 255, 255);
+}
+
+#excel_data_1 tr:nth-child(1) {
+  background: #343333;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: large;
+}
+
+#excel_data_1 tr:last-child td:nth-child(1) {
+  background: #bbbbbb;
+  color: rgb(0, 0, 0);
+}
+
+#excel_data_1 tr:last-child {
+  background: #bbbbbb;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+
+#excel_data_1 td {
+  border: 5px solid #efefef;
+  padding: 10px;
+}
+
+
+#excel_data_1 tr {
+  border: 5px solid #efefef;
+  padding: 10px;
+  height: 40px;
+  background-color: white;
+}
+
+/*
+#excel_data_1 {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#excel_data_1 td:nth-child(1) {
+  background: #ff0000;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+#excel_data_1 tr:nth-child(1) td:nth-child(1) {
+  background: #343333;
+  color: rgb(255, 255, 255);
+}
+
+#excel_data_1 tr:nth-child(1) {
+  background: #343333;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+#excel_data_1 tr:last-child td:nth-child(1) {
+  background: #bbbbbb;
+  color: rgb(0, 0, 0);
+}
+
+#excel_data_1 tr:last-child {
+  background: #bbbbbb;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+
+#excel_data_1 td {
+  border: 5px solid #ddd;
+  padding: 10px;
+}
+
+*/
+#disposible_table {
+  text-align: left;
+}
+
+#disposible_table td {
+  padding: 5px;
+  text-align: right;
+}
+
+#disc {
+  width: 10%;
+  font-weight: bold;
+
+
+}
+
+
+#hmm{
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#disposabel_table2{
+  text-align: left;
+  padding: 5px;
+  border: 5px solid #efefef;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  margin-bottom: 5px;
+}
+#disposabel_table2 td {
+  border: 5px solid #efefef;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#disposabel_table2 th {
+  padding: 10px;
+  font-weight: bold;
+}
+#disposabel_table2 tr {
+  background-color: white;
+}
+#disposabel_table2 tr:nth-child(1) {
+  background: #ff0000;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+#disposabel_table2 td:last-child {
+  background: #a9a9a9;
+  color: rgb(0, 0, 0);
+}
+
+
+
+
+
+#disposabel_table3{
+  text-align: left;
+  padding: 5px;
+  border: 5px solid #efefef;
+  display: inline-block;
+}
+#disposabel_table3 td {
+  border: 5px solid #efefef;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#disposabel_table3 th {
+  padding: 10px;
+  font-weight: bold;
+}
+#disposabel_table3 tr {
+  background-color: white;
+}
+#disposabel_table3 tr:nth-child(1) {
+  background: #ff0000;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+#disposabel_table3 td:last-child {
+  background: #a9a9a9;
+  color: rgb(0, 0, 0);
+}
+
+
+
+
+
+#disposabel_table4{
+  text-align: left;
+  padding: 5px;
+  border: 5px solid #efefef;
+  display: inline-block;
+  margin-left: 5%;
+}
+#disposabel_table4 td {
+  border: 5px solid #efefef;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#disposabel_table4 th {
+  padding: 10px;
+  font-weight: bold;
+}
+#disposabel_table4 tr {
+  background-color: white;
+}
+#disposabel_table4 tr:nth-child(1) {
+  background: #ff0000;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+#disposabel_table4 td:last-child {
+  background: #a9a9a9;
+  color: rgb(0, 0, 0);
+}
