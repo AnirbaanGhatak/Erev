@@ -31,23 +31,59 @@
           console.log(sheet_data);
 
           if(sheet_data.length > 0){
+            
             if(i==0){
+              
+              var count=0;
               var table_output = '<table class="table table-striped table-bordered">';
                 for(var row = 0; row < sheet_data.length-1; row++){
                   table_output += '<tr>';
                     for(var cell = 0; cell < sheet_data[row].length; cell++)
                     {
+                        
                         if(row == 0)
                         {
     
-                            table_output += '<th>'+sheet_data[row][cell]+'</th>';
+                          table_output += '<th>'+sheet_data[row][cell]+'</th>';
     
+                        }
+                        
+                        else if(row>20){
+                          
+                          if(count==0){
+                            
+                            if(row==22)
+                            {
+                              table_output+='</table><div class="html2pdf__page-break"  style="margin-top: 20%; margin-bottom:20%;" ></div>';
+                              console.log("Inside R22");
+                              for(var cell = 0; cell < sheet_data[row].length; cell++)
+                                  table_output += '<table><th>'+sheet_data[0][cell]+'</th>';
+                              count=1;
+                              continue;
+                            }
+                              
+                            console.log("Outside R22");
+                            
+                            for(var cell = 0; cell < sheet_data[row].length; cell++)
+                              table_output += '<td>'+sheet_data[21][cell]+'</td>';
+                            table_output += '<tr>';
+                            for(var cell = 0; cell < sheet_data[row].length; cell++)
+                              table_output += '<td>'+sheet_data[22][cell]+'</td>';
+                            
+                            
+                            
+                              
+                          }
+                          else{
+                            table_output += '<td>'+sheet_data[row][cell]+'</td>';
+                          }
+                          
+                          console.log(count);
                         }
                         else
                         {
                             table_output += '<td>'+sheet_data[row][cell]+'</td>';
                         }
-    
                     }
                 }
                 table_output += '</tr>';
@@ -140,9 +176,7 @@
 
   var sheet_name = work_book.SheetNames;
 
-  var sheet_data_3 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[3]], {header:1});
-  console.log(sheet_data)
-  document.getElementById("recommendation_text").innerHTML=sheet_data_3[1][0];
+  
 
 
   var sheet_delinquencies = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1});
@@ -153,21 +187,32 @@
   console.log("Deli =",column_length);
   
   deli=sheet_delinquencies[row_length-1][column_length];
+  console.log(deli);
   if(deli>0){
-    
+    console.log("sda"+deli);
     var gfg_down = document.getElementById("case1");
     gfg_down.parentNode.removeChild(gfg_down);
     gfg_down = document.getElementById("case2");
     gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case4");
+    gfg_down.parentNode.removeChild(gfg_down);
     gfg_down = document.getElementById("recommendation_text");
     gfg_down.parentNode.removeChild(gfg_down);
+    var sheet_data_4 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
+    document.getElementById("list1").innerHTML=sheet_data_4[1][0];
     
   }
   else{
+    var sheet_data_3 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[3]], {header:1});
+  console.log(sheet_data)
+  document.getElementById("recommendation_text").innerHTML=sheet_data_3[1][0];
    if(sheet_name.length == 6){
     var gfg_down = document.getElementById("case1");
     gfg_down.parentNode.removeChild(gfg_down);
     gfg_down = document.getElementById("case3");
+    gfg_down.parentNode.removeChild(gfg_down);
+    gfg_down = document.getElementById("case4");
     gfg_down.parentNode.removeChild(gfg_down);
     var sheet_data_4 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
     
@@ -211,6 +256,9 @@
     gfg_down.parentNode.removeChild(gfg_down);
     gfg_down = document.getElementById("case2");
     gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case4");
+    gfg_down.parentNode.removeChild(gfg_down);
     table_output="<table>";
             var sheet_data_5 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
     case1.style.display = "block";
@@ -226,6 +274,17 @@
             table_output += '</tr>';
             table_output+="</table>"
             document.getElementById("disposabel_table2").innerHTML = table_output;
+  }
+  if(disposable<0){
+    
+    var gfg_down = document.getElementById("case3");
+    gfg_down.parentNode.removeChild(gfg_down);
+    gfg_down = document.getElementById("case2");
+    gfg_down.parentNode.removeChild(gfg_down);
+    gfg_down = document.getElementById("case1");
+    gfg_down.parentNode.removeChild(gfg_down);
+    
+
   }
 
   }

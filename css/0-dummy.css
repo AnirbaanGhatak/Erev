@@ -12,6 +12,7 @@ input[type=file] {
   border-collapse: collapse;
   font-size: medium;
   width: 80%;
+  border-color: none;
 }
 
 #excel_data_0 tr:nth-child(1) {
@@ -231,6 +232,7 @@ input[type=file] {
 
 
 #disposabel_table4{
+  margin-bottom: auto;
   text-align: left;
   padding: 5px;
   border: 5px solid #efefef;
