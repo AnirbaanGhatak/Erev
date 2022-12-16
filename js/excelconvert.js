@@ -197,6 +197,12 @@
     
     gfg_down = document.getElementById("case4");
     gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case5");
+    gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case6");
+    gfg_down.parentNode.removeChild(gfg_down);
     gfg_down = document.getElementById("recommendation_text");
     gfg_down.parentNode.removeChild(gfg_down);
     var sheet_data_4 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
@@ -214,6 +220,14 @@
     gfg_down.parentNode.removeChild(gfg_down);
     gfg_down = document.getElementById("case4");
     gfg_down.parentNode.removeChild(gfg_down);
+    if(salary>=20000){
+      gfg_down = document.getElementById("case5");
+      gfg_down.parentNode.removeChild(gfg_down);
+      }
+      if(credit_score>=650){
+      gfg_down = document.getElementById("case6");
+      gfg_down.parentNode.removeChild(gfg_down);
+      }
     var sheet_data_4 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
     
     //3,4
@@ -251,6 +265,7 @@
   }
 
   else if(sheet_name.length == 5){
+    console.log('salaary'+salary);
     //2
     var gfg_down = document.getElementById("case3");
     gfg_down.parentNode.removeChild(gfg_down);
@@ -259,6 +274,14 @@
     
     gfg_down = document.getElementById("case4");
     gfg_down.parentNode.removeChild(gfg_down);
+    if(salary>=20000){
+    gfg_down = document.getElementById("case5");
+    gfg_down.parentNode.removeChild(gfg_down);
+    }
+    if(credit_score>=650){
+    gfg_down = document.getElementById("case6");
+    gfg_down.parentNode.removeChild(gfg_down);
+    }
     table_output="<table>";
             var sheet_data_5 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
     case1.style.display = "block";
@@ -275,7 +298,39 @@
             table_output+="</table>"
             document.getElementById("disposabel_table2").innerHTML = table_output;
   }
-  if(disposable<0){
+  if(salary<20000){
+    console.log('gaandi');
+    if(sheet_name.length == 5){
+    gfg_down = document.getElementById("case1");
+    gfg_down.parentNode.removeChild(gfg_down);
+    }
+    if(sheet_name.length == 6){
+    gfg_down = document.getElementById("case2");
+    gfg_down.parentNode.removeChild(gfg_down);
+    }/*
+    if(credit_score<650){
+    gfg_down = document.getElementById("case6");
+    gfg_down.parentNode.removeChild(gfg_down);
+    }
+    */  
+    gfg_down = document.getElementById("recommendation_text");
+    gfg_down.parentNode.removeChild(gfg_down);
+  }
+  else if(credit_score<650){
+    
+    if(sheet_name.length == 5){
+      gfg_down = document.getElementById("case1");
+      gfg_down.parentNode.removeChild(gfg_down);
+    }
+    if(sheet_name.length == 6){
+      gfg_down = document.getElementById("case2");
+      gfg_down.parentNode.removeChild(gfg_down);
+    }
+    
+    gfg_down = document.getElementById("recommendation_text");
+    gfg_down.parentNode.removeChild(gfg_down);
+  }
+  else if(disposable<0){
     
     var gfg_down = document.getElementById("case3");
     gfg_down.parentNode.removeChild(gfg_down);
@@ -284,8 +339,14 @@
     gfg_down = document.getElementById("case1");
     gfg_down.parentNode.removeChild(gfg_down);
     
+    gfg_down = document.getElementById("case5");
+    gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case6");
+    gfg_down.parentNode.removeChild(gfg_down);
 
   }
+
 
   }
 
@@ -294,11 +355,19 @@
 
   });
  
-  
+  const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    let currentDate = `${day}-${month}-${year}`;
+    console.log(currentDate);
+
   $('.btn-download').click(function(e){
     const options = {
       margin: 0,
-      filename:trial_name+' CAR.pdf',
+      filename:trial_name+'_'+ currentDate+'_CAR.pdf',
       image: { 
         type: 'jpeg', 
         quality: 1
