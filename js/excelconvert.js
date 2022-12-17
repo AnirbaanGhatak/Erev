@@ -305,49 +305,7 @@
             table_output+="</table>"
             document.getElementById("disposabel_table2").innerHTML = table_output;
   }
-  if(salary<20000){
-    console.log('gaandi');
-    if(sheet_name.length <= 5){
-    gfg_down = document.getElementById("case1");
-    gfg_down.parentNode.removeChild(gfg_down);
-    }
-    if(sheet_name.length <= 6){
-    gfg_down = document.getElementById("case2");
-    gfg_down.parentNode.removeChild(gfg_down);
-    }
-    if(salary==0){
-       
-    gfg_down = document.getElementById("case5");
-    gfg_down.parentNode.removeChild(gfg_down);
-    }
-    else{
-      
-    gfg_down = document.getElementById("case7");
-    gfg_down.parentNode.removeChild(gfg_down);
-    }
-    /*
-    if(credit_score<650){
-    gfg_down = document.getElementById("case6");
-    gfg_down.parentNode.removeChild(gfg_down);
-    }
-    */  
-    gfg_down = document.getElementById("recommendation_text");
-    gfg_down.parentNode.removeChild(gfg_down);
-  }
-  else if(credit_score<650){
-    
-    if(sheet_name.length == 5){
-      gfg_down = document.getElementById("case1");
-      gfg_down.parentNode.removeChild(gfg_down);
-    }
-    if(sheet_name.length == 6){
-      gfg_down = document.getElementById("case2");
-      gfg_down.parentNode.removeChild(gfg_down);
-    }
-    
-    gfg_down = document.getElementById("recommendation_text");
-    gfg_down.parentNode.removeChild(gfg_down);
-  }
+  
   else if(disposable<0){
     
     var gfg_down = document.getElementById("case3");
