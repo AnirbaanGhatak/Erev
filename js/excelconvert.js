@@ -306,7 +306,7 @@
             document.getElementById("disposabel_table2").innerHTML = table_output;
   }
   
-  else if(disposable<0){
+  if(disposable<0){
     
     var gfg_down = document.getElementById("case3");
     gfg_down.parentNode.removeChild(gfg_down);
