@@ -197,11 +197,29 @@
     
     gfg_down = document.getElementById("case4");
     gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case5");
+    gfg_down.parentNode.removeChild(gfg_down);
     gfg_down = document.getElementById("recommendation_text");
     gfg_down.parentNode.removeChild(gfg_down);
     var sheet_data_4 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
     document.getElementById("list1").innerHTML=sheet_data_4[1][0];
     
+  }
+  else if(salary==0){
+    
+    var gfg_down = document.getElementById("case1");
+    gfg_down.parentNode.removeChild(gfg_down);
+    gfg_down = document.getElementById("case2");
+    gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case3");
+    gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case4");
+    gfg_down.parentNode.removeChild(gfg_down);
+    gfg_down = document.getElementById("recommendation_text");
+    gfg_down.parentNode.removeChild(gfg_down);
   }
   else{
     var sheet_data_3 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[3]], {header:1});
@@ -213,6 +231,9 @@
     gfg_down = document.getElementById("case3");
     gfg_down.parentNode.removeChild(gfg_down);
     gfg_down = document.getElementById("case4");
+    gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case5");
     gfg_down.parentNode.removeChild(gfg_down);
     var sheet_data_4 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
     
@@ -259,6 +280,9 @@
     
     gfg_down = document.getElementById("case4");
     gfg_down.parentNode.removeChild(gfg_down);
+    
+    gfg_down = document.getElementById("case5");
+    gfg_down.parentNode.removeChild(gfg_down);
     table_output="<table>";
             var sheet_data_5 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[4]], {header:1});
     case1.style.display = "block";
@@ -284,6 +308,8 @@
     gfg_down = document.getElementById("case1");
     gfg_down.parentNode.removeChild(gfg_down);
     
+    gfg_down = document.getElementById("case5");
+    gfg_down.parentNode.removeChild(gfg_down);
 
   }
 
